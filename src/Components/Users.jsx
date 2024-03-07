@@ -25,7 +25,7 @@ function Users(){
         //regester
     const handleRegisterUsers = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:5000/create/Users", {
+        axios.post("https://gas-system-backend.onrender.com/create/Users", {
             "Id": Id,
             "UserName": UserName,
             "Password": Password,
@@ -40,7 +40,7 @@ function Users(){
 
     //read
     const handleReadData = () =>{
-        axios.get(`http://localhost:5000/allUsers?page=${page}`).then((response) =>{
+        axios.get(`https://gas-system-backend.onrender.com/allUsers?page=${page}`).then((response) =>{
             setUser(response.data)
         }).catch((error)=>{
             console.log(error)

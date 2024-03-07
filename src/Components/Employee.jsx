@@ -35,7 +35,7 @@ function Employee(){
 
     //read
     const handleReadData = () =>{
-        axios.get(`http://localhost:5000/allemployees?page=${page}`).then((response) =>{
+        axios.get(`https://gas-system-backend.onrender.com/allemployees?page=${page}`).then((response) =>{
             setEmployees(response.data)
         }).catch((error)=>{
             console.log(error)
@@ -64,7 +64,7 @@ function Employee(){
     //register
     const handleRegisterEmpolyee = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:5000/create/employee", {
+        axios.post("https://gas-system-backend.onrender.com/create/employee", {
             "Id": Id,
             "Name": Name,
             "Role": Role,
@@ -84,7 +84,7 @@ function Employee(){
     //update
     const handleUpdate = (e) => {
       e.preventDefault()
-      axios.put(`http://localhost:5000/employee/update/${prams.id}`, {
+      axios.put(`https://gas-system-backend.onrender.com/employee/update/${prams.id}`, {
         "Id": Id,
         "Name": Name,
         "Role": Role,
@@ -103,7 +103,7 @@ function Employee(){
     const handleSearchEmp = (id) =>{
       const key = id.target.value
       if(key){
-      axios.get(`http://localhost:5000/search/Employee/${key}`).then((response) =>{
+      axios.get(`https://gas-system-backend.onrender.com/search/Employee/${key}`).then((response) =>{
           setEmployees(response.data)
       }).catch((error) =>{
           console.log(error)
@@ -118,7 +118,7 @@ function Employee(){
 
   //get one data API
   const handleSingleData = () =>{
-    axios.get(`http://localhost:5000/employee/single/${prams.id}`).then((response) =>{
+    axios.get(`https://gas-system-backend.onrender.com/employee/single/${prams.id}`).then((response) =>{
         setEmpId(response.data[0].Id)
         setEmpName(response.data[0].Name)
         setRole(response.data[0].Role)

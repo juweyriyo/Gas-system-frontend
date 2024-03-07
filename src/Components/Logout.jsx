@@ -12,7 +12,7 @@ function Logout(){
     const loginAdmin = (e) =>{
         e.preventDefault()
 
-        axios.post("http://localhost:5000/create/login",{
+        axios.post("https://gas-system-backend.onrender.com/create/login",{
             "Username": Username,
             "Password": Password,
             "Role": Role

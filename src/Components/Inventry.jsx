@@ -16,7 +16,7 @@ function Inventry(){
       const [inventory, setInventory] = useState([])
 
       const handleInventory = () =>{
-        axios.get("http://localhost:5000/allInventory").then((response) => {
+        axios.get("https://gas-system-backend.onrender.com/allInventory").then((response) => {
             setInventory(response.data)
         }).catch((error) => console.log(error))
       }

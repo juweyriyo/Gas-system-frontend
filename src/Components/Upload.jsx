@@ -15,7 +15,7 @@ function Upload() {
         formData.append("file", file)
 
         e.preventDefault()
-        axios.post("http://localhost:5000/Gas/report", formData).then(() => {
+        axios.post("https://gas-system-backend.onrender.com/Gas/report", formData).then(() => {
             toast("Document has ben saved successfully", {
                 position: "top-center",
                 autoClose: 2000,

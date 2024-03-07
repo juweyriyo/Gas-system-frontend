@@ -20,7 +20,7 @@ function Purchase(){
       //register
     const handleRegisterPurchase = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:5000/register/purchases", {
+        axios.post("https://gas-system-backend.onrender.com/register/purchases", {
             "ParchaseID": ParchaseID,
             "tankSize": tankSize,
             "CompanyName": CompanyName,
@@ -40,7 +40,7 @@ function Purchase(){
 
         //read
     const handleReadData = () =>{
-        axios.get(`http://localhost:5000/allSuppliers`).then((response) =>{
+        axios.get(`https://gas-system-backend.onrender.com/allSuppliers`).then((response) =>{
             setSupplier(response.data)
         }).catch((error)=>{
             console.log(error)
@@ -50,7 +50,7 @@ function Purchase(){
 
     //read
     const handlleReadData = () =>{
-        axios.get(`http://localhost:5000/allPurchases`).then((response) =>{
+        axios.get(`https://gas-system-backend.onrender.com/allPurchases`).then((response) =>{
             setPurchase(response.data)
         }).catch((error)=>{
             console.log(error)

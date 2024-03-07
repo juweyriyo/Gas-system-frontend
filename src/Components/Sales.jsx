@@ -19,7 +19,7 @@ function Sales(){
       const [total, setTotal] = useState(3);
     
       const handleReadData = () => {
-        axios.get(`http://localhost:5000/allCustomers`)
+        axios.get(`https://gas-system-backend.onrender.com/allCustomers`)
           .then((response) => {
             setCustomers(response.data);
           })
@@ -29,7 +29,7 @@ function Sales(){
       };
     
       const handleInventory = () => {
-        axios.get("http://localhost:5000/allInventory")
+        axios.get("https://gas-system-backend.onrender.com/allInventory")
           .then((response) => {
             setInventory(response.data);
           })

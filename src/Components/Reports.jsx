@@ -7,7 +7,7 @@ function Reports() {
     const [getFile, setGetFile] = useState([])
 
     const handleGetReports = () => {
-        axios.get("http://localhost:5000/allReprts").then((res) => {
+        axios.get("https://gas-system-backend.onrender.com/allReprts").then((res) => {
             setGetFile(res.data)
         }).catch((error) => console.log(error))
     }
@@ -25,7 +25,7 @@ function Reports() {
 
         {
             getFile.map((data) => {
-                return <RepoetDesign fileName={`http://localhost:5000/allrepot/${data.file}`} />
+                return <RepoetDesign fileName={`https://gas-system-backend.onrender.com/allrepot/${data.file}`} />
             })
         }
 

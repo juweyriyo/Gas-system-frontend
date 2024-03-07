@@ -106,7 +106,7 @@ function Costomars(){
 
     //get one data API
     const handleSingleData = () =>{
-      axios.get(`http://localhost:5000/customer/single/${prams.id}`).then((response) =>{
+      axios.get(`https://gas-system-backend.onrender.com/customer/single/${prams.id}`).then((response) =>{
           setCustomerID(response.data[0].CustomerID)
           setCustomerName(response.data[0].CustomerName)
           setContactNumber(response.data[0].ContactNumber)

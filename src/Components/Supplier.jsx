@@ -25,7 +25,7 @@ function Supplier(){
       //register
     const handleRegisterSupplier = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:5000/create/supplier", {
+        axios.post("https://gas-system-backend.onrender.com/create/supplier", {
             "SupplierID": SupplierID,
             "SupplierName": SupplierName,
             "ContactNumber": ContactNumber,
@@ -45,7 +45,7 @@ function Supplier(){
 
     //read
     const handleReadData = () =>{
-        axios.get(`http://localhost:5000/allSuppliers?page=${page}`).then((response) =>{
+        axios.get(`https://gas-system-backend.onrender.com/allSuppliers?page=${page}`).then((response) =>{
             setSupplier(response.data)
         }).catch((error)=>{
             console.log(error)
@@ -71,7 +71,7 @@ function Supplier(){
     //update
     const handleUpdate = (e) => {
         e.preventDefault()
-        axios.put(`http://localhost:5000/supplier/update/${prams.id}`, {
+        axios.put(`https://gas-system-backend.onrender.com/supplier/update/${prams.id}`, {
             "SupplierID": SupplierID,
             "SupplierName": SupplierName,
             "ContactNumber": ContactNumber,
@@ -85,7 +85,7 @@ function Supplier(){
 
     //delete methode
     const handleDelete = (id)=>{
-        axios.delete(`localhost:5000/student/delete/ ${id}`).then(() =>{
+        axios.delete(`https://gas-system-backend.onrender.com/student/delete/ ${id}`).then(() =>{
             alert("supplier delete succful")
         }).catch((error) =>{
             console.log(error);
@@ -96,7 +96,7 @@ function Supplier(){
     const handleSearchSuppliers = (id) =>{
         const key = id.target.value
         if(key){
-        axios.get(`http://localhost:5000/search/Supplier/${key}`).then((response) =>{
+        axios.get(`https://gas-system-backend.onrender.com/search/Supplier/${key}`).then((response) =>{
             setSupplier(response.data)
         }).catch((error) =>{
             console.log(error)
@@ -109,7 +109,7 @@ function Supplier(){
 
     //get one data API
     const handleSingleData = () =>{
-        axios.get(`http://localhost:5000/supplier/single/${prams.id}`).then((response) =>{
+        axios.get(`https://gas-system-backend.onrender.com/supplier/single/${prams.id}`).then((response) =>{
             setSuppId(response.data[0].SupplierID)
             setSuppName(response.data[0].SupplierName)
             setSuppNumber(response.data[0].ContactNumber)
